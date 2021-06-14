@@ -1,0 +1,24 @@
+
+Infrastructure-as-Code (e.g. Terraform)
+
+1-Write a stack in an idempotent infrastructure-as-code framework
+  We use Terraform and some CloudFormation, but use what you are comfortable in
+  We use AWS, but you may target a different cloud platform if you’d prefer
+2-In this stack, please provision as much of the following as you can:
+  - A network, containing
+  - a web subnet and a data subnet (name them whatever you want)
+  - in the web subnet:
+    + an autoscaling group of compute instances (e.g. EC2). They don’t need to be running anything in particular
+    + a load balancer (AWS ALB, ELB or similar) in front of the compute instances, publicly accessible from the internet
+
+  - in the data subnet
+    + an instance of a caching service (e.g. redis or memcached) using 
+    the cloud provider’s hosted service (e.g. AWS ElastiCache, Azure Redis Cache, or similar)
+
+  - Connectivity allowing the web servers in the web subnet to communicate with the cache service in the data subnet.
+  - Terraform or CloudFormation Outputs of
+    + the load balancer’s hostname
+    + the cache’s read/write endpoint hostname
+
+3.- Write a README containing information you think would be helpful for another engineer working on or running this code.
+ 
