@@ -28,7 +28,7 @@ It creates a VPC with public subnets (172.16.33.[1-3] and private subnets 172.16
   The private subnets host the ElastiCache using three nodes. Placing each node
   in a different (AZ)
   
-  Most of the terraform files use vars whenever posible.
+  Most of the terraform files use vars whenever possible.
     The vars.tf file can be edited to change:
      - The region (SILVEX-REGION)
      - ssh-key (SILVEX-SSH-2020)
@@ -43,7 +43,12 @@ It creates a VPC with public subnets (172.16.33.[1-3] and private subnets 172.16
   
   Most of the 'tf' were given a name to reflect their function.
     - pri denotes private
-    - pub denotes public
+    - pub denotes public (internet facing)
+    - rt denotes route
+    - sn denotes subnet
+    - tg denotes target group
+    - ec denotes elastic cluster
+    - alb denotes application load balancer
   
   The file scope-of-work.txt has the requirements this code was built from.
   Please read it to perhaps deploy to another cloud provider (Azure, Oracle, Google).
