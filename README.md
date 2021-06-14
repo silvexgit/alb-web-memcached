@@ -4,22 +4,22 @@
 All Rights reserved
 esilva@silvex.com
 
-Use at your own risk and is provided ASIS without any kind of warranties. 
+Use at your own risk and is provided As-Is without any kind of warranties. 
 
 This Creates an AWS stack in the us-west-2 region consisting of: 
     Application Load Balancer
     Three web servers in three different availability zone (AZ)
     A three node ElastiCache cluster using AWS memcache. 
 
-The user excuting this code needs to have AWS keys with full admin (root) access.
-It takes about 6 minutes for the stack to be fully deployed, but it takes longer to destroy.
+The user executing this code needs to have AWS keys with full admin (root) access.
+It takes about 6 minutes for the stack to be fully deployed, but it takes a bit longer to destroy.
 
 I used a free tier account to avoid being charged to develop this code.
 Thus the reason for not providing any auto scaling.
 
 It creates a VPC with public subnets (172.16.33.[1-3] and private subnets 172.16.33.[4-6].
   The public subnets hosts the EC2 instances (Amazon Linux2) with httpd enabled along 
-  the php 7.3 library to connect to the memcache cluster.
+  the PHP 7.3 library to connect to the memcache cluster. It will discovert the memcache automatically.
   
   The bash setup-ec2.sh script has all of the steps to configure the EC2s to use the ElastiCache.
   
