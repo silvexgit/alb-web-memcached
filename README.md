@@ -8,8 +8,8 @@ Use at your own risk and is provided As-Is without any kind of warranties.
 
 This Creates an AWS stack in the us-west-2 region consisting of: 
     Application Load Balancer
-    Three web servers in three different availability zone (AZ)
-    A three node ElastiCache cluster using AWS memcache. 
+    Three web servers in three different availability zones (AZ)
+    A three node ElastiCache cluster with AWS memcache. 
 
 The user executing this code needs to have AWS keys with full admin (root) access.
 It takes about 6 minutes for the stack to be fully deployed, but it takes a bit longer to destroy.
@@ -30,10 +30,10 @@ It creates a VPC with public subnets (172.16.33.[1-3] and private subnets 172.16
   
   Most of the terraform files use vars whenever possible.
     The vars.tf file can be edited to change:
-     - The region (SILVEX-REGION)
-     - ssh-key (SILVEX-SSH-2020)
-     - Image (SILVEX-AMI)
-     - EC2 (SILVEX-EC2-TYPE)
+     - The region (SILVEX-REGION) US-West-2
+     - ssh-key (SILVEX-SSH-2020) I used existing key. 
+     - Image (SILVEX-AMI) Stock AMI Linux2
+     - EC2 (SILVEX-EC2-TYPE) t2.micro.
      
   Edit the securitygroup.tf file to provide access per your needs BEFORE executing code.
     
