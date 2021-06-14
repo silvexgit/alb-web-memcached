@@ -19,7 +19,7 @@ Thus the reason for not providing any auto scaling.
 
 It creates a VPC with public subnets (172.16.33.[1-3] and private subnets 172.16.33.[4-6].
   The public subnets hosts the EC2 instances (Amazon Linux2) with httpd enabled along 
-  the PHP 7.3 library to connect to the memcache cluster. It will discovert the memcache automatically.
+  the PHP 7.3 library to connect to the memcache cluster. It will discover the memcache automatically.
   
   The bash setup-ec2.sh script has all of the steps to configure the EC2s to use the ElastiCache.
   
