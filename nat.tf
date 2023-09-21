@@ -1,6 +1,6 @@
 # nat gw
 resource "aws_eip" "nat" {
-  vpc = true
+  domain   = "vpc"
 }
 
 resource "aws_nat_gateway" "silvex-nat-gw" {
@@ -37,4 +37,3 @@ resource "aws_route_table_association" "silvex-rt-pri-3-a" {
   subnet_id      = aws_subnet.silvex-sn-172-33-pri-3.id
   route_table_id = aws_route_table.silvex-rt-pri.id
 }
-
